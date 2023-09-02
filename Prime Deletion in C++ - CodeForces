@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    long long t;
+    cin>>t;
+    while(t--){
+        string s;
+        cin>>s;
+        long long sum=0,k;
+        int f=0;
+        for(int i=0;i<s.length();i++){
+            sum=0;
+            sum = sum*10 + (s[i]-'0');
+            k = sum;
+            for(int j=1;j<s.length();j++){
+                sum = k;
+                sum = sum * 10 + (s[j]-'0');
+                if(sum==2 || sum ==3||sum==5|| sum== 7||sum== 11|| sum== 13 || sum==17 || sum==19 ||sum==23|| sum==29|| sum==31||sum==37||sum==41||sum==43||sum==47||sum==53||sum==59||sum==61||sum==67||sum==71||sum==73||sum==79||sum==83||sum==89||sum==97){
+                    f=1;
+                    break;
+                }
+            }
+            if(f==1){
+                break;
+            }
+        }
+
+        if(f==1){
+            cout<<sum<<endl;
+        }
+        else{
+            cout<<-1<<endl;
+        }
+
+
+    }
+}
